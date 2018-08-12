@@ -1,0 +1,44 @@
+name: short-linker
+version: '0.1.0.0'
+category: Game
+author: Justin Watt
+maintainer: justinwatt@gmail.com
+copyright: Copyright (c) 2016
+license: BSD3
+github: justinwatt/short-linker
+extra-source-files:
+- README.md
+library:
+  source-dirs: src
+  exposed-modules:
+  - Lib
+  dependencies:
+  - base >=4.7 && <5
+  - aeson
+  - servant-server
+  - wai
+  - warp
+  - freer-simple
+executables:
+  short-linker:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - short-linker
+tests:
+  short-linker-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - short-linker
+    - hspec
