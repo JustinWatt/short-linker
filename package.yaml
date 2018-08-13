@@ -19,6 +19,11 @@ library:
   - wai
   - warp
   - freer-simple
+  - text
+  - containers
+  - microlens
+  - microlens-th
+
 executables:
   short-linker:
     main: Main.hs
